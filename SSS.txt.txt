@@ -1,0 +1,110 @@
+CREATE DATABASE Test_db
+SHOW DATABASES
+USE test_db
+
+create table greetings ( id INT PRIMARY KEY, MESSAGE VARCHAR (255) );
+
+INSERT INTO greetings (id, message )
+values (6, " SQL" );
+
+SELECT * FROM greetings;
+select id from greetings;
+
+CREATE DATABASE geeksforgeeks;
+show databases;
+ 
+ USE geeksforgeeks;
+ 
+ DROP database geeksforgreeks;
+ 
+ CREATE table Employees (
+ EmployeesID INT PRIMARY KEY,
+ FirstName VARCHAR (50),
+ LastName VARCHAR (50),
+ Country VARCHAR (50),
+ Age INT CHECK (Age >=0 AND Age <= 99),
+ phone INT
+ );
+ 
+ 
+ Alter table Employees
+ modify phone varchar(10);
+ 
+ 
+ INSERT INTO Employees (EmployeesID, FirstName, LastName, Country, Age, Phone)
+VALUES 
+(1, 'Bharathi', 'D', 'Italy', 23, '4455654389'),
+(2, 'mahisa', 'S', 'Japan', 23, '9876543212'),
+(3, 'Shirisha', 'Y', 'Spain', 23, '3726589345'),
+(4, 'ABC', 'C', 'Germany', 22, '8613592648'),
+(5, 'EFG', 'G', 'USA', 25, '5327959465');
+
+
+SELECT * From Employees;
+
+update employees 
+set age = 4 
+where employeesID = 1;
+
+update employees
+set age = 10 
+where employeesID = 2;
+
+update employees
+set age = 30 
+where employeesID = 3;
+
+update employees 
+set age = 22
+where employeesID = 4;
+
+update employees
+set age = 14
+where employeesID = 5;
+
+CREATE TABLE SubTable AS
+SELECT employeesID, FirstName
+FROM employees;
+
+
+select firstname, age from employees; 
+
+
+drop table customer
+
+## rename
+Alter table customers
+Rename TO Engineers;
+
+
+create table developers (
+Id INT primary key,
+firstname varchar (50)
+);
+
+insert into developers (id, firstname)
+values (1, 'a' );
+
+TRUNCATE TABLE DEVELOPERS;
+
+CREATE TABLE EMPLOYEES_COPY AS
+SELECT * FROM EMPLOYEEs;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
