@@ -1,0 +1,100 @@
+
+####SQL Queries
+
+USE geeksforgeeks;
+
+DELETE FROM Employees
+WHERE EmployeesID = 5;
+
+SELECT * FROM Employees;
+
+
+
+
+######  SQL CLAUSES - SQL Clauses are keywords that modify the behavior of an SQL query.
+SELECT * FROM Employees
+WHERE Age > 23;
+
+
+SELECT *
+FROM Employees
+WHERE Country = 'Spain';
+
+
+WITH AdultEmployees AS
+(
+    SELECT *
+    FROM Employees
+    WHERE Age >= 23
+)
+SELECT *
+FROM AdultEmployees;
+
+
+SELECT Country,
+COUNT(*) AS TotalEmployees
+FROM Employees
+GROUP BY Country
+HAVING COUNT(*) >= 1;
+
+select country,
+count(*)AS TEmployees
+FROM employees
+GROUP BY Country
+HAVING COUNT(*)>= 2;
+
+
+SELECT * From employees
+ORDER BY Age ASC;
+
+SELECT * FROM Employees 
+ORDER BY FirstName DESC;
+
+SELECT Country,
+Count(*) AS TEmployees
+from employees 
+group by Country;
+
+#LIMIT
+select * from employees
+order by age DESC
+limit 2;
+
+#distict - The DISTINCT clause removes duplicate values and returns only unique values.
+select distinct country 
+from employees;
+
+#ALIAS - An Alias gives a temporary name to a column or table, making query results easier to read.
+SELECT E.firstname, 
+       e.country
+from employees as E;
+
+
+
+##### SQL Operators - SQL Operators are symbols or keywords used to perform operations on data. They help you compare values, combine conditions, filter records, and perform calculations.
+
+#. Arithmetic Operators - Used to perform mathematical calculations.
+
+Select firstname, age,
+age + 5 as ageafter5years
+from employees;
+
+
+select firstname, age * 2 as doubleage
+from employees;
+
+# Comparison Operators - Operator	Meaning
+                             =	Equal
+
+select * from employees
+where country = 'USA';
+
+##Logical Operators - Used to combine multiple conditions.
+
+#AND
+
+select * from employees 
+where country = 'italy'
+AND age =23;
+
+
